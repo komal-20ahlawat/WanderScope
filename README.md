@@ -1,8 +1,19 @@
 # 🌍 WanderScope
 
-## 📌 Project Overview
+## ✨ Project Overview
 
-WanderScope is a web application that helps users explore countries and make smarter travel decisions using real-time weather data. It allows users to view country details, check weather conditions, and determine whether it is a suitable time to visit a destination.
+WanderScope is an interactive travel exploration web application that enables users to discover countries and make informed travel decisions using real-time data.
+
+By integrating external APIs, the application provides country insights along with live weather conditions, helping users determine the best time to visit a destination.
+
+---
+
+## 🎯 Key Highlights
+
+* 🌎 Real-time country exploration
+* 🌦️ Live weather insights for better travel planning
+* ❤️ Wishlist feature for saving destinations
+* 🧠 Smart travel suggestions based on weather conditions
 
 ---
 
@@ -10,23 +21,44 @@ WanderScope is a web application that helps users explore countries and make sma
 
 ### 🔍 Core Features
 
-* Search for any country
-* View country details (flag, capital, region, population)
-* Fetch real-time weather data using the capital city
-* Display travel suggestions based on weather conditions
+* Search for any country dynamically
+* View country details:
+
+  * Flag
+  * Capital
+  * Region
+  * Population
+* Fetch real-time weather data using capital city
+* Display travel recommendations based on weather conditions
+
+---
 
 ### ⭐ Additional Features
 
-* Add and remove countries from a wishlist
-* Display best destinations based on favorable weather
-* Map view of selected country using embedded maps
+* Add/remove countries from wishlist
+* Suggest best destinations based on favorable weather
+* Embedded map view for geographical context
+
+---
+
+## ⚙️ How It Works
+
+1. User searches for a country
+2. App fetches data from **REST Countries API**
+3. Extracts the capital city
+4. Sends request to **OpenWeatherMap API**
+5. Displays:
+
+   * Country details
+   * Current weather
+   * Travel suggestion
 
 ---
 
 ## 🌐 APIs Used
 
-* REST Countries API – Provides country-related information
-* OpenWeatherMap API – Provides real-time weather data
+* **REST Countries API** – Country information
+* **OpenWeatherMap API** – Weather data
 
 ---
 
@@ -34,29 +66,47 @@ WanderScope is a web application that helps users explore countries and make sma
 
 * HTML
 * CSS
-* JavaScript
+* JavaScript (ES6+)
+---
+
+## 🧠 Concepts Implemented
+
+* Asynchronous JavaScript (`async/await`)
+* Fetch API for API calls
+* Higher-order functions:
+
+  * `map()`
+  * `filter()`
+  * `sort()`
+* DOM manipulation
+* Event handling
 
 ---
 
+
 ## ⚙️ Setup Instructions
 
-1. Clone this repository
-2. Navigate to the project folder
-3. Add your OpenWeatherMap API key in the JavaScript file
-4. Open `index.html` in your browser
+1. Clone the repository
+2. Open project folder
+3. Add your OpenWeatherMap API key in `script.js`
+4. Run `index.html` in browser
 
 ---
 
 ## 🎯 Project Objectives
 
-* Demonstrate API integration using JavaScript
-* Implement higher-order functions such as `map`, `filter`, and `sort`
-* Build a responsive and user-friendly UI
+* Demonstrate real-world API integration
+* Build a responsive and interactive UI
+* Apply modern JavaScript concepts in a practical project
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Add advanced filtering and sorting options
-* Improve UI/UX design
-* Add travel recommendations based on more parameters
+* Advanced filtering (budget, season, preferences)
+* AI-based travel recommendations
+* Improved UI/UX with animations
+* User authentication for saving preferences
+
+---
+

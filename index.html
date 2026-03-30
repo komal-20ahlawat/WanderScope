@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>WanderScope</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🌍 WanderScope</h1>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Enter country name">
+    <button onclick="getCountry()">Search</button>
+    <button onclick="showWishlist()">❤️ Wishlist</button>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="mainPage">
+    <div id="result"></div>
+  </div>
+
+  <!-- WISHLIST PAGE -->
+  <div id="wishlistPage" style="display:none;">
+    <h2>❤️ Your Wishlist</h2>
+    <button onclick="goBack()">⬅ Back</button>
+    <div id="wishlist"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
