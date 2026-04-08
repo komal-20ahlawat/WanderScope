@@ -1,32 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WanderScope</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>🌍 WanderScope</h1>
 
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Enter country name">
-    <button onclick="getCountry()">Search</button>
-    <button onclick="showWishlist()">❤️ Wishlist</button>
+  <nav>
+    <h1>🌍 WanderScope</h1>
+    <div>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('wishlist')">❤️ Wishlist (<span id="wishlistCount">0</span>)</button>
+      <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+
+  <div id="homePage">
+
+    <div class="search-box">
+      <h2>Find Your Next Adventure ✈️</h2>
+      <p>Search for any country to see details and weather.</p>
+
+      <input type="text" id="searchInput" placeholder="Enter country name..." />
+
+      <select id="regionFilter">
+        <option value="">All Regions</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+
+      <select id="sortOption">
+        <option value="">Sort By</option>
+        <option value="name">Name (A-Z)</option>
+        <option value="population">Population (High to Low)</option>
+      </select>
+
+      <button onclick="searchCountry()">Search</button>
+    </div>
+
+    <div id="countryResult" style="display: none;">
+      <div class="result-grid">
+
+     
+        <div class="card">
+          <img id="flagImg" src="" alt="Flag" />
+          <h2 id="countryName"></h2>
+          <p>🏛️ Capital: <span id="capital"></span></p>
+          <p>🌐 Region: <span id="region"></span></p>
+          <p>👥 Population: <span id="population"></span></p>
+          <p>🗣️ Languages: <span id="languages"></span></p>
+          <button id="wishlistBtn" onclick="toggleWishlist()">❤️ Add to Wishlist</button>
+        </div>
+
+     
+        <div class="card">
+          <h3>🌤️ Weather in <span id="weatherCity"></span></h3>
+          <div id="weatherLoading" style="display:none">Loading weather...</div>
+          <div id="weatherInfo" style="display:none">
+            <p id="weatherTemp"></p>
+            <p id="weatherDesc"></p>
+            <p id="weatherHumidity"></p>
+            <p id="weatherWind"></p>
+            <div id="travelTip" class="tip-box"></div>
+          </div>
+          <div id="weatherError" style="display:none">
+            <p>⚠️ Weather data not available.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="welcomeMsg" class="center-msg">
+      <p>🌎 Search for a country above to get started!</p>
+    </div>
+
+
+    <div id="noResults" style="display:none" class="center-msg">
+      <p>😕 No country found. Try a different name.</p>
+    </div>
+
   </div>
 
- 
-  <div id="mainPage">
-    <div id="result"></div>
-  </div>
 
   
-  <div id="wishlistPage" style="display:none;">
-    <h2>❤️ Your Wishlist</h2>
-    <button onclick="goBack()">⬅ Back</button>
-    <div id="wishlist"></div>
+  <div id="wishlistPage" style="display:none">
+    <div class="search-box">
+      <h2>❤️ Your Travel Wishlist</h2>
+      <button onclick="showPage('home')">← Back to Search</button>
+    </div>
+
+    <div id="wishlistEmpty" class="center-msg" style="display:none">
+      <p>Your wishlist is empty. Add some countries!</p>
+    </div>
+
+    <div id="wishlistGrid" class="wishlist-grid"></div>
   </div>
+
+
+  
+
 
   <script src="script.js"></script>
 </body>
