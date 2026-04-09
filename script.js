@@ -196,7 +196,7 @@ function toggleWishlist() {
     wishlist = wishlist.filter(function(item) {
       return item.name !== countryName;
     });
-    showToast(countryName + " removed from wishlist");
+    showNotify(countryName + " removed from wishlist");
   } else {
 
     var newItem = {
@@ -207,7 +207,7 @@ function toggleWishlist() {
       addedOn: new Date().toLocaleDateString()
     };
     wishlist.push(newItem);
-    showToast(countryName + " added to wishlist! ❤️");
+    showNotify(countryName + " added to wishlist! ❤️");
   }
 
   saveWishlistToStorage();
@@ -220,7 +220,7 @@ function removeFromWishlist(countryName) {
   });
   saveWishlistToStorage();
   renderWishlistPage();
-  showToast(countryName + " removed from wishlist");
+  showNotify(countryName + " removed from wishlist");
 
   if (currentCountry && currentCountry.name.common === countryName) {
     updateWishlistButton();
@@ -305,4 +305,13 @@ if (savedTheme === "dark") {
   document.body.classList.add("dark");
 }
 
+function showNotify(message) {
+  var notify = document.getElementById("notify");
+  notify.textContent = message;
+  notify.classList.add("show");
+ 
+  setTimeout(function() {
+    notify.classList.remove("show");
+  }, 3000);
+}
 
