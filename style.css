@@ -8,8 +8,26 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f4f0;
   color: #222;
+
+  background-image: url("https://video.cgtn.com/news/77416a4e7a67544e786b544f344d444e304d7a4e31457a6333566d54/video/ca413729bcf64502ab923c080b9d0920/ca413729bcf64502ab923c080b9d0920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: -1;
+}
+
 
 
 body.dark {
@@ -64,9 +82,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1e6b3c;
   color: white;
   padding: 14px 28px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);  
+  color: white;
 }
 
 nav h1 {
