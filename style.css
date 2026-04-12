@@ -357,18 +357,22 @@ body.dark .wishlist-card p {
   transform: translateX(-50%) translateY(0);
 }
 
-@media (max-width: 650px) {
-  .result-grid {
-    grid-template-columns: 1fr;
+@media (max-width:650px){
+  nav{
+    flex-direction:column;
+    gap:10px;
+    padding:12px;
+    text-align:center;
   }
 
-  .search-box input,
-  .search-box select {
-    width: 100%;
-    margin: 5px 0;
+  nav div{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
   }
 
-  nav h1 {
-    font-size: 1rem;
+  nav button{
+    margin:0;
   }
 }

@@ -314,4 +314,3 @@ function showNotify(message) {
     notify.classList.remove("show");
   }, 3000);
 }
-
